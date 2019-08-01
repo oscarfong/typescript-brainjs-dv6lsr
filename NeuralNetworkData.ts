@@ -44,7 +44,7 @@ export class NIList {    // Neural Item List
 
  toJSON() {
 	  var xx = [] ;
-      for(var i = 0; i < this.npList.length; i++) {
+    for(var i = 0; i < this.npList.length; i++) {
 		  xx.push( this.npList[i].toJSON() );
 	  }
 	  return xx;
@@ -57,9 +57,21 @@ export class NIList {    // Neural Item List
 
 }
 
+///////////////
+export class NNQuery extends NIList {
+    
+}	
+/////
 
 
 
+export class  NNTraininData{
+	InputData : NIList;
+	OutputData: NIList;
+    
+}	
+
+////
 console.log( "NeuralNetworkItem...");
 
 export default NeuralNetworkItem;
