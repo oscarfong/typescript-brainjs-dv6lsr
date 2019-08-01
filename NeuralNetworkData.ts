@@ -16,8 +16,14 @@ class NeuralNetworkItem {
     
   }
 
+  
   toJSON() {
-    return JSON.stringify(( [this.labelName, this.val01]))
+    return [this.labelName, this.val01];
+  }
+
+
+  toJSONStr() {
+    return JSON.stringify(( this.toJSON()));
   }
 
 }
