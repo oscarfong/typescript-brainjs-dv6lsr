@@ -41,14 +41,6 @@ export class NIList {    // Neural Item List
   }
 
 
-//  toJSON() {
-//	  var xx = [] ;
-//    //var item1;
-//	  for (var item1 in this.npList) {
-//		  xx.push( item1.toJSON());
-//	  }
-//	  return xx;
-//  }
 
  toJSON() {
 	  var xx = [] ;
