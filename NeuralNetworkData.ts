@@ -41,14 +41,22 @@ export class NeuralPredicate {
   }
 
 
-  toJSON() {
+//  toJSON() {
+//	  var xx = [] ;
+//    //var item1;
+//	  for (var item1 in this.npList) {
+//		  xx.push( item1.toJSON());
+//	  }
+//	  return xx;
+//  }
+
+ toJSON() {
 	  var xx = [] ;
-    var item1:any;
-	  for (item1 in this.npList) {
-		  xx.push( item.toJSON());
+      for(var i = 0; i < this.npList.length; i++) {
+		  xx.push( this.npList[i].toJSON() );
 	  }
 	  return xx;
-  }
+ }
 
   toJSONStr() {
     return JSON.stringify(( this.toJSON()));
