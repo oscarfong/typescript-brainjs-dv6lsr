@@ -4,7 +4,7 @@
 // Import stylesheets
 import './style.css';
 
-import NeuralNetworkItem, {NeuralPredicate} from './NeuralNetworkData';
+import NeuralNetworkItem, {NIList} from './NeuralNetworkData';
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
@@ -17,9 +17,9 @@ console.log( nn1.toJSON());
 
 // test NeuralPredicate
 
-var np1 = new NeuralPredicate();
+var np1 = new NIList();
 np1.add(  new NeuralNetworkItem("bagsToWashHome", 0.6));
 np1.add(  new NeuralNetworkItem("bagsInStore", 0.4));
-np1.add(  new NeuralNetworkItem("bagsUnused", 0.3));
+np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
 console.log(np1.toJSONStr());

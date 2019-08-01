@@ -29,7 +29,7 @@ class NeuralNetworkItem {
 }
 ////////////////
 
-export class NeuralPredicate {
+export class NIList {    // Neural Item List
   npList : NeuralNetworkItem[];
   
   constructor() {
