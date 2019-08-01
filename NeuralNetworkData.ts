@@ -21,6 +21,27 @@ class NeuralNetworkItem {
   }
 
 }
+////////////////
+
+class NeuralPredicate {
+  npList : NeuralNetworkItem[];
+  
+  constructor() {
+    this.npList =[];
+  }
+
+  add( ni: NeuralNetworkItem) {
+    this.npList.push( ni) ;
+  }
+
+  
+
+
+}
+
+
+
+
 console.log( "NeuralNetworkItem...");
 
 export default NeuralNetworkItem;
