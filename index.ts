@@ -10,4 +10,6 @@ import NeuralNetworkItem from './NeuralNetworkData';
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
-var nn1 = new NeuralNetworkItem();
+var nn1 = new NeuralNetworkItem("bagsToWash", 0.7);
+
+console.log( nn1.toJSON());

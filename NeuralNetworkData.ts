@@ -9,8 +9,10 @@ class NeuralNetworkItem {
   val01: number; // from 0 to 1
   
 
-  constructor(){
+  constructor(ll:string, vv:number){
     //super();
+    this.labelName = ll;
+    this.val01 = vv;
     
   }
 
