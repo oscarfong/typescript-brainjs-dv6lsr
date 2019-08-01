@@ -29,7 +29,7 @@ class NeuralNetworkItem {
 }
 ////////////////
 
-class NeuralPredicate {
+export class NeuralPredicate {
   npList : NeuralNetworkItem[];
   
   constructor() {
@@ -40,7 +40,19 @@ class NeuralPredicate {
     this.npList.push( ni) ;
   }
 
-  
+
+  toJSON() {
+	  var xx = [] ;
+    var item1:any;
+	  for (item1 in this.npList) {
+		  xx.push( item.toJSON());
+	  }
+	  return xx;
+  }
+
+  toJSONStr() {
+    return JSON.stringify(( this.toJSON()));
+  }
 
 
 }
