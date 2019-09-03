@@ -24,3 +24,8 @@ np1.add(  new NeuralNetworkItem("bagsInStore", 0.4));
 np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
 console.log(np1.toJSONStr());
+
+console.log("pt 001 ramda");
+
+console.log(np1.onlyVal());
+

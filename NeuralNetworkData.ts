@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import * as R from 'ramda';
 //import {ResourceBase} from './ClsTest1'
 
 // pls ref: to react-ts-lodash-private-95fpq7-8cyqgs
@@ -26,8 +26,11 @@ class NeuralNetworkItem {
     return JSON.stringify(( this.toJSON()));
   }
 
+
 }
-////////////////
+
+
+
 
 export class NIList {    // Neural Item List
   npList : NeuralNetworkItem[];
@@ -54,6 +57,15 @@ export class NIList {    // Neural Item List
     return JSON.stringify(( this.toJSON()));
   }
 
+////////////////
+ 
+ onlyVal() {
+	 const valfn = x => x.val01;
+	 
+	 return R.map( valfn, this.npList);
+	 
+	 
+ }
 
 }
 
