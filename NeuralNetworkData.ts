@@ -102,6 +102,15 @@ export class NIList {    // Neural Item List
 	 
  }
 
+ headListSplitN( pos){
+   return this.splitN(pos)['headList'];
+ }
+
+
+ tailListSplitN( pos){
+   return this.splitN(pos)['tailList'];
+ }
+
 
 
 
