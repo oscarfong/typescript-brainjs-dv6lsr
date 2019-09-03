@@ -58,14 +58,22 @@ export class NIList {    // Neural Item List
   }
 
 ////////////////
+ onlyKeys() {  // keys or labelName
+	 const valfn = x => x.labelName;
+	 
+	 return R.map( valfn, this.npList);
+	 
+	 
+ }
  
- onlyVal() {
+ onlyVals() {
 	 const valfn = x => x.val01;
 	 
 	 return R.map( valfn, this.npList);
 	 
 	 
  }
+
 
 }
 

@@ -27,5 +27,7 @@ console.log(np1.toJSONStr());
 
 console.log("pt 001 ramda");
 
-console.log(np1.onlyVal());
+console.log(np1.onlyVals());
 
+
+console.log(np1.onlyKeys());
