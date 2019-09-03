@@ -31,3 +31,4 @@ console.log(np1.onlyVals());
 
 
 console.log(np1.onlyKeys());
+console.log(np1.splitN(2));

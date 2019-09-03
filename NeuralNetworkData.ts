@@ -31,6 +31,7 @@ class NeuralNetworkItem {
 
 
 
+////////////////
 
 export class NIList {    // Neural Item List
   npList : NeuralNetworkItem[];
@@ -62,10 +63,48 @@ export class NIList {    // Neural Item List
 	 const valfn = x => x.labelName;
 	 
 	 return R.map( valfn, this.npList);
+
+ }
+
+
+
+
+
+
+
+ 
+ splitN(NumForList1) {
+	 ///
+	 var headList=[];
+	 var tailList=[];
 	 
+	 var ii =0;
+	 const len1 = (this.npList.length);
+   console.log(len1);
+
+	 
+	 while (ii <= len1-1 )
+	 {
+		 
+		 if (ii <= NumForList1-1) {
+			 headList.push(this.npList[ii]);
+			 
+		 }
+		 else {
+			 tailList.push(this.npList[ii]);
+		 }
+     ii++;
+		 
+		 
+	 }
+	 
+	 return ({'headList':headList, 'tailList':tailList});
 	 
  }
- 
+
+
+
+
  onlyVals() {
 	 const valfn = x => x.val01;
 	 
