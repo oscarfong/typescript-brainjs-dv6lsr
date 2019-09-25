@@ -4,6 +4,10 @@ import * as R from 'ramda';
 
 // pls ref: to react-ts-lodash-private-95fpq7-8cyqgs
 
+
+import brain from 'brain.js'
+
+
 class NeuralNetworkItem {
   labelName: string; 
   val01: number; // from 0 to 1
@@ -58,7 +62,6 @@ export class NIList {    // Neural Item List
     return JSON.stringify(( this.toJSON()));
   }
 
-////////////////
  onlyKeys() {  // keys or labelName
 	 const valfn = x => x.labelName;
 	 
@@ -67,6 +70,25 @@ export class NIList {    // Neural Item List
  }
 
 
+////////////////
+ 
+ train(numOfInput) {
+	 // numOfInput states how many items of npList from head are input and the rest on the right side are output
+
+     // provide optional config object (or undefined). Defaults shown.
+     const config = {
+         binaryThresh: 0.5,
+         hiddenLayers: [3],     // array of ints for the sizes of the hidden layers in the network
+         activation: 'sigmoid',  // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh'],
+         leakyReluAlpha: 0.01   // supported for activation type 'leaky-relu'
+     };
+
+
+	 var net = new brain.NeuralNetwork(config);
+	 R.apply( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList) ;
+	 return net;
+
+ }
 
 
 
@@ -74,7 +96,7 @@ export class NIList {    // Neural Item List
 
  
  splitN(NumForList1) {
-	 ///
+	 /// can be replace with Ramda take() and drop()
 	 var headList=[];
 	 var tailList=[];
 	 

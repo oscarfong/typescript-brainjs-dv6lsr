@@ -39,6 +39,13 @@ console.log( R.drop(2,np1.npList) );
 
 
 console.log("pt 002");
+const netTrained = np1.train(2);
+console.log (netTrained);
+const ans003 =  netTrained.run( [0.4 ,0.4]);
+//console.log( ans003);
+R.apply(console.log, ans003);
+
+console.log("pt 003");
 /////////////
 
 console.log(np1.onlyKeys());

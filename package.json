@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
-    "brainjs": "^0.7.4",
-    "ramda": "^0.26.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "brain.js": "^1.6.1",
+    "brainjs": "0.7.4",
+    "ramda": "0.26.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   }
 }
