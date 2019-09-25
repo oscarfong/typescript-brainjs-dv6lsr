@@ -6,6 +6,7 @@
 import './style.css';
 
 import NeuralNetworkItem, {NIList} from './NeuralNetworkData';
+import * as R from 'ramda';
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
@@ -25,10 +26,16 @@ np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
 console.log(np1.toJSONStr());
 
+////////////////// Test splitting value only 190925 
 console.log("pt 001 ramda");
 
-console.log(np1.onlyVals());
+const onlyV = np1.onlyVals();
+console.log( onlyV );
+console.log( R.take(2,onlyV) );
+console.log( R.drop(2,onlyV) );
 
+console.log("pt 002");
+/////////////
 
 console.log(np1.onlyKeys());
 console.log(np1.splitN(2));
