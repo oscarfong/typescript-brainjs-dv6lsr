@@ -152,6 +152,10 @@ export class  NNTraininData{
 ///////////////
 export class NINetwork{
     NDataRows : NIList[];	
+  
+    constructor() {
+      this.NDataRows =[];
+    }
 
     add(n:NIList){
       this.NDataRows.push(n);
@@ -174,7 +178,7 @@ export class NINetwork{
    	 //R.call( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.NDataRows) ;
    	 
    	 this.NDataRows.forEach( function(x) {
-   		 net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] );
+   		 net.train( [ {input: R.take( numOfInput, x.onlyVals()) , output: R.drop(numOfInput, x.onlyVals()) } ] );
    	 });
    
    

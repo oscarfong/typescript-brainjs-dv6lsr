@@ -5,7 +5,7 @@
 // Import stylesheets
 import './style.css';
 
-import NeuralNetworkItem, {NIList} from './NeuralNetworkData';
+import NeuralNetworkItem, {NIList, NINetwork} from './NeuralNetworkData';
 import * as R from 'ramda';
 
 // Write TypeScript code!
@@ -24,6 +24,11 @@ np1.add(  new NeuralNetworkItem("bagsToWashHome", 0.6));
 np1.add(  new NeuralNetworkItem("bagsInStore", 0.4));
 np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
+var nnet = new NINetwork();
+nnet.add(np1);
+
+
+
 console.log(np1.toJSONStr());
 
 ////////////////// Test splitting value with ramda only 190925 
@@ -39,11 +44,13 @@ console.log( R.drop(2,np1.npList) );
 
 
 console.log("pt 002");
-const netTrained = np1.train(2);
-console.log (netTrained);
-//const ans003 =  netTrained.run( [0.6,0.4]);
+
+const netTrained = nnet.trainNet(2);
 console.log("pt 002-1");
-//console.log( ans003.toString());
+console.log (netTrained);
+const ans003 =  netTrained.run( [0.6,0.4]);
+console.log("pt 002-2 / Answer");
+console.log( ans003.toString());
 //console.log( ans003[0]);
 //R.apply(console.log, ans003);
 
