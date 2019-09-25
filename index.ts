@@ -42,7 +42,9 @@ console.log("pt 002");
 const netTrained = np1.train(2);
 console.log (netTrained);
 const ans003 =  netTrained.run( [0.4 ,0.4]);
-//console.log( ans003);
+console.log("pt 002-1");
+console.log( ans003);
+console.log( ans003[0]);
 R.apply(console.log, ans003);
 
 console.log("pt 003");

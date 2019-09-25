@@ -1,3 +1,5 @@
+// NeuralNetworkData.ts
+
 import React, { Component } from 'react';
 import * as R from 'ramda';
 //import {ResourceBase} from './ClsTest1'
@@ -85,7 +87,15 @@ export class NIList {    // Neural Item List
 
 
 	 var net = new brain.NeuralNetwork(config);
-	 R.apply( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList) ;
+	 //R.call( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList) ;
+	 
+	 this.npList.forEach( function(x) {
+		 net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] );
+	 });
+
+
+   console.log("pt101");
+   //R.call(x => console.log( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList );
 	 return net;
 
  }
