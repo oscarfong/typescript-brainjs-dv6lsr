@@ -19,15 +19,12 @@ console.log( nn1.toJSON());
 
 // test NeuralPredicate
 
-var np1 = new NIList();
-np1.add(  new NeuralNetworkItem("bagsToWashHome", 0.6));
-np1.add(  new NeuralNetworkItem("bagsInStore", 0.4));
-np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
-
 var nnet = new NINetwork();
-nnet.add(np1);
+
 ///
-nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.1, 0.94, 0.131] );
+var np1 = nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [0.6,0.4, 0.31] );
+
+//nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.1, 0.94, 0.131] );
 
 
 

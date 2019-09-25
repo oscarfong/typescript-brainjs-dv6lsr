@@ -189,21 +189,17 @@ export class NINetwork{
     }
     
   ///////////
-  addAsKeysVals(pKeys:string[], pVals:float[]) {
-      var np1 = new NIList();
+  addAsKeysVals(pKeys:string[], pVals:number[]) {
+    var np1 = new NIList();
 	  
 	  var zipKV = R.zip(pKeys, pVals);
 	  
 	  zipKV.forEach( function(x) {
 		  np1.add(  new NeuralNetworkItem(x[0], x[1]));
 	  });
-	  
-      //np1.add(  new NeuralNetworkItem("bagsToWashHome", 0.6));
-      //np1.add(  new NeuralNetworkItem("bagsInStore", 0.4));
-      //np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
-	  
-	  
+
 	  this.add(np1);
+    return (np1);
 
   }
 
