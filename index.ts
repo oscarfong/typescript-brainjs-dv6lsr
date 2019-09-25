@@ -6,6 +6,11 @@
 import './style.css';
 
 import NeuralNetworkItem, {NIList, NINetwork} from './NeuralNetworkData';
+
+
+import retro1, {retro2} from './retro1';
+
+
 import * as R from 'ramda';
 
 // Write TypeScript code!
@@ -50,7 +55,7 @@ console.log (netTrained);
 const ans003 =  netTrained.run( [0.6,0.4]);
 console.log("pt 002-2 / Answer");
 console.log( ans003.toString());
-//console.log( ans003[0]);
+console.log( ans003);
 //R.apply(console.log, ans003);
 
 console.log("pt 003");
@@ -61,3 +66,14 @@ console.log(np1.splitN(2));
 console.log(np1.headListSplitN(1));
 
 console.log(np1.tailListSplitN(1));
+
+
+
+
+// testing retro1
+var r1 = new retro1(netTrained);
+var retroAns=  r1.findInput([0.11]);
+
+console.log("pt 004");
+console.log( retroAns);
+console.log( retroAns[0]);
