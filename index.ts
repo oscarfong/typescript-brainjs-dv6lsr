@@ -26,13 +26,17 @@ np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
 console.log(np1.toJSONStr());
 
-////////////////// Test splitting value only 190925 
+////////////////// Test splitting value with ramda only 190925 
 console.log("pt 001 ramda");
 
 const onlyV = np1.onlyVals();
 console.log( onlyV );
 console.log( R.take(2,onlyV) );
 console.log( R.drop(2,onlyV) );
+// Test splitting NIList with ramda only 190925 
+console.log( R.take(2,np1.npList) );
+console.log( R.drop(2,np1.npList) );
+
 
 console.log("pt 002");
 /////////////
