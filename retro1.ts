@@ -14,6 +14,10 @@ class retro1 {
 
   findInput( existingOutput) {
     const input = brainRetro(existingOutput, this.brainNetwork );
+    //console.log(this.brainNetwork);
+    //
+    //const input = brainRetro({output:[0.11]}, this.brainNetwork );
+
     return input;
 
   }

@@ -30,7 +30,8 @@ var nnet = new NINetwork();
 var np1 = nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [0.6,0.4, 0.31] );
 
 //nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.1, 0.94, 0.131] );
-
+nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [0.0,0.0, 0.00] );
+nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.0,1.0, 1.00] );
 
 
 console.log(np1.toJSONStr());
@@ -72,7 +73,7 @@ console.log(np1.tailListSplitN(1));
 
 // testing retro1
 var r1 = new retro1(netTrained);
-var retroAns=  r1.findInput([0.11]);
+var retroAns=  r1.findInput( [{output: [0.11]}] );
 
 console.log("pt 004");
 console.log( retroAns);
