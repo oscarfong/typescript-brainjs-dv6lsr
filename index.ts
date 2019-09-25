@@ -26,6 +26,8 @@ np1.add(  new NeuralNetworkItem("bagsUnused", 0.31));
 
 var nnet = new NINetwork();
 nnet.add(np1);
+///
+nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.1, 0.94, 0.131] );
 
 
 
