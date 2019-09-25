@@ -74,35 +74,10 @@ export class NIList {    // Neural Item List
 
 ////////////////
  
- train(numOfInput) {
-   // To correct: should go one level upper than NIList
-
-	 // numOfInput states how many items of npList from head are input and the rest on the right side are output
-
-     // provide optional config object (or undefined). Defaults shown.
-     const config = {
-         binaryThresh: 0.5,
-         hiddenLayers: [3],     // array of ints for the sizes of the hidden layers in the network
-         activation: 'sigmoid',  // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh'],
-         leakyReluAlpha: 0.01   // supported for activation type 'leaky-relu'
-     };
-
-
-	 var net = new brain.NeuralNetwork(config);
-	 //R.call( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList) ;
-	 
-	 this.npList.forEach( function(x) {
-		 net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] );
-	 });
-
-
-   console.log("pt101");
-   //R.call(x => console.log( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.npList );
-	 return net;
-
- }
-
-
+  train() {
+	  console.log("* Deprecated: NIList.train()");
+	  return {};
+  }
 
 
 
@@ -172,6 +147,50 @@ export class  NNTraininData{
 	OutputData: NIList;
     
 }	
+
+
+///////////////
+export class NINetwork{
+    NDataRows : NIList[];	
+
+    add(n:NIList){
+      this.NDataRows.push(n);
+    }
+
+    trainNet(numOfInput) {
+   
+   	 // numOfInput states how many items of NDataRows from head are input and the rest on the right side are output
+   
+        // provide optional config object (or undefined). Defaults shown.
+        const config = {
+            binaryThresh: 0.5,
+            hiddenLayers: [3],     // array of ints for the sizes of the hidden layers in the network
+            activation: 'sigmoid',  // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh'],
+            leakyReluAlpha: 0.01   // supported for activation type 'leaky-relu'
+        };
+   
+   
+   	 var net = new brain.NeuralNetwork(config);
+   	 //R.call( x => net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.NDataRows) ;
+   	 
+   	 this.NDataRows.forEach( function(x) {
+   		 net.train( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] );
+   	 });
+   
+   
+      console.log("pt101");
+      //R.call(x => console.log( [ {input: R.take( numOfInput, x) , output: R.drop(numOfInput, x) } ] ) ,     this.NDataRows );
+   	 return net;
+   
+    }
+
+
+
+	
+	
+}
+
+
 
 ////
 console.log( "NeuralNetworkItem...");
