@@ -75,6 +75,8 @@ export class NIList {    // Neural Item List
 ////////////////
  
  train(numOfInput) {
+   // To correct: should go one level upper than NIList
+
 	 // numOfInput states how many items of npList from head are input and the rest on the right side are output
 
      // provide optional config object (or undefined). Defaults shown.
