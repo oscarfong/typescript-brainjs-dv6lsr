@@ -12,7 +12,7 @@ import retro1, {retro2} from './retro1';
 
 
 import * as R from 'ramda';
-
+import brainRetro from 'brain.retro.js';
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
@@ -32,6 +32,7 @@ var np1 = nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , 
 //nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.1, 0.94, 0.131] );
 nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [0.0,0.0, 0.00] );
 nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [1.0,1.0, 1.00] );
+//nnet.addAsKeysVals( ["bagsToWashHome", "bagsInStore", "bagsUnused"] , [0.5,0.5,0.5] );
 
 
 console.log(np1.toJSONStr());
@@ -72,9 +73,13 @@ console.log(np1.tailListSplitN(1));
 
 
 // testing retro1
+console.log(">> pt Retro test begins");
 var r1 = new retro1(netTrained);
-var retroAns=  r1.findInput( [{output: [0.11]}] );
+var retroAns=  r1.findInput( {output: [1.0]} );
 
 console.log("pt 004");
 console.log( retroAns);
 console.log( retroAns[0]);
+console.log("<< pt Retro test ends");
+
+
